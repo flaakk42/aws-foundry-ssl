@@ -1,6 +1,8 @@
 #!/bin/bash
 source /foundryssl/variables.sh
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo amazon-linux-extras install epel -y
+sudo yum update -y
+#sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum install -y ddclient
 
 if [[ ${webserver_bool} == "True" ]]
