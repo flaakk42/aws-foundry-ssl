@@ -73,17 +73,19 @@
 				"True",
 				"False"
 			],
-			"Default": "False"
+			"Default": "True"
 		},
 		"FoundryDownloadLink": {
 			"Description": "This will be your personal link to download Foundry. You can either use a Patreon link, or a Google Drive link.",
-			"Type": "String"
+			"Type": "String",
+            "Default": ""
 		},
 		"S3BucketName": {
 			"Description": "Name for S3 bucket that will be created. This must be globally unique across all of AWS, so be a little creative. Must be all lowercase letters or numbers, no spaces, and no symbols expect dash (-).",
 			"ConstraintDescription": "This must be globally unique across all of AWS, so be a little creative. Must be all lowercase letters or numbers, no spaces, and no symbols expect dash (-).",
 			"Type": "String",
-			"AllowedPattern": "^[a-z|0-9]+(-[a-z|0-9]+)*$"
+			"AllowedPattern": "^[a-z|0-9]+(-[a-z|0-9]+)*$",
+            "Default": ""
 		},
 		"OptionalSshAccess": {
 			"Description": "Will create a rulle allowing TCP port 22 inbound for the given IP Range. You MUST enter a range. For a single IP put /32 at the end. You will want to use your public IP (https://www.whatsmyip.org/). Example of a valid entry: 123.1.2.3/32. If you are not using this feature, leave this value blank and no SSH rule will be configured.",
@@ -150,7 +152,8 @@
 		"FullyQualifiedDomainName": {
 			"Description": "This is the name of the domain you have purchased. (e.g. mywebsitename.com).",
 			"Type": "String",
-			"AllowedPattern": "^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\\.[a-zA-Z]{2,})+$"
+			"AllowedPattern": "^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\\.[a-zA-Z]{2,})+$",
+			"Default": ""
 		},
 		"SubdomainName": {
 			"Description": "Name for the final URL to access foundry. Must be all lowercase, no letters, no spaces, and no symbols. (e.g. 'foundry' will become 'foundry.mywebsitename.com')",
@@ -161,15 +164,18 @@
 		},
 		"APIKey": {
 			"Description": "API Key from your domain registrar. If you are using Namecheap this will just be the same value you entered for FullyQualifiedDomainName.",
-			"Type": "String"
+			"Type": "String",
+			"Default": ""
 		},
 		"APISecret": {
 			"Description": "API Secret associated with the API Key above.",
-			"Type": "String"
+			"Type": "String",
+			"Default": ""
 		},
 		"Email": {
 			"Description": "A valid email address is required for letsencrypt certs.",
-			"Type": "String"
+			"Type": "String",
+			"Default": ""
 		},
 		"DomainRegistrar": {
 			"Description": "The domain registrar from which the domain was purchased from.",
@@ -179,7 +185,8 @@
 				"godaddy",
 				"namecheap",
 				"amazon"
-			]
+			],
+			"Default": "namecheap"
 		},
 		"WebServerBool": {
 			"Description": "Set this to true if you would like your instance to act as a web server for your base domain as well as host Foundry. Refer to guide section for additional DNS steps.",

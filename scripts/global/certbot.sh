@@ -2,7 +2,7 @@
 source /foundryssl/variables.sh
 
 # install epel
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 # install certbot
 sudo yum install -y certbot python2-certbot-nginx
