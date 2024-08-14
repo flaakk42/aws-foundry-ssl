@@ -9,7 +9,9 @@ source /foundryssl/variables.sh
 #sudo yum install -y openssl-devel
 
 # install tool to download foundry install file from google drive
+sudo yum remove urllib3
 pip3 install gdown
+pip3 install 'urllib3<2.0'
 
 # download foundry from patreon link or google drive
 cd /home/foundry/foundry-install
